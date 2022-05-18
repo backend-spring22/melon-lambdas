@@ -25,6 +25,12 @@ public class Main {
             System.out.println(m);
         }
 
+        List<Melon> found = Filters.filterByWeight(melons, 1200);
+        System.out.println("Lista melones de 1200g: ");
+        for(Melon m: found) {
+            System.out.println(m);
+        }
+
     }
 
 
