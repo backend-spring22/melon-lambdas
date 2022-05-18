@@ -42,4 +42,17 @@ public final class  Filters {
 
         return result;
     }
+
+    public static List<Melon> filterMelons(List<Melon> melons, MelonPredicate predicate) {
+        if(melons==null) {
+            throw new IllegalArgumentException("Melons cannot be null");
+        }
+        List<Melon> result = new ArrayList<>();
+        for(Melon melon: melons) {
+            if(melon!=null && predicate.test(melon)) {
+                result.add(melon);
+            }
+        }
+        return result;
+    }
 }

@@ -1,6 +1,5 @@
 package com.sinensia.lambdas;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +29,14 @@ public class Main {
         for(Melon m: found) {
             System.out.println(m);
         }
+
+        System.out.println("Lista melones gac: ");
+        GacMelonPredicate gacMelonPredicate = new GacMelonPredicate();
+        List<Melon> gac = Filters.filterMelons(melons, gacMelonPredicate);
+        for(Melon m: gac) {
+            System.out.println(m);
+        }
+
 
     }
 
