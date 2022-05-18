@@ -36,6 +36,22 @@ public class Main {
             System.out.println(m);
         }
 
+        System.out.println("Lista melones pesados: ");
+        List<Melon> heavy = Filters.filterMelons(melons, new HeavyMelonPredicate());
+        for(Melon m: heavy) {
+            System.out.println(m);
+        }
+
+        System.out.println("Lista melones super-pesados: ");
+        List<Melon> superheavy = Filters.filterMelons(melons, new MelonPredicate() {
+            @Override
+            public boolean test(Melon melon) {
+                return melon!=null && melon.getWeight()>=6000;
+            }
+        });
+        for(Melon m: superheavy) {
+            System.out.println(m);
+        }
 
     }
 
