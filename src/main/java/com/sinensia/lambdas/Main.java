@@ -19,7 +19,7 @@ public class Main {
             System.out.println(melons.get(i).toString());
         }
 
-        List<Melon> bailan = filterByType(melons, "Bailan");
+        List<Melon> bailan = Filters.filterByType(melons, "Bailan");
         System.out.println("Lista filtrada: ");
         for(Melon m: bailan) {
             System.out.println(m);
@@ -27,19 +27,5 @@ public class Main {
 
     }
 
-    private static List<Melon> filterByType(List<Melon> melons, String type) {
-        if(melons == null || type ==null) {
-             throw new IllegalArgumentException("Melons/type cannot be null");
-        }
-        if(melons.isEmpty()) {
-            return melons;
-        }
-        List<Melon> result = new ArrayList<>();
-        for(Melon melon : melons) {
-            if(melon!=null && type.equalsIgnoreCase(melon.getType())) {
-                result.add(melon);
-            }
-        }
-        return result;
-    }
+
 }
