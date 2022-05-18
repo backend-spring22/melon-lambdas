@@ -31,8 +31,7 @@ public class Main {
         }
 
         System.out.println("Lista melones gac: ");
-        GacMelonPredicate gacMelonPredicate = new GacMelonPredicate();
-        List<Melon> gac = Filters.filterMelons(melons, gacMelonPredicate);
+        List<Melon> gac = Filters.filterMelons(melons, new GacMelonPredicate());
         for(Melon m: gac) {
             System.out.println(m);
         }
