@@ -1,7 +1,10 @@
 package com.sinensia.lambdas;
 
+import javax.xml.stream.util.StreamReaderDelegate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -19,4 +22,23 @@ public class Main {
         }
 
     }
+
+    private static List<Melon> filterByType(List<Melon> melons, String type ) {
+        List<Melon> resFiltered = new ArrayList<>();
+        for (Melon m: melons) {
+            if (m.getCategory().equals(type)) {
+                resFiltered.add(m);
+            }
+        }
+        return resFiltered;
+    }
+
+    private static List<Melon> filterByCategory(List<Melon> melons, String type ) {
+        return melons.stream()
+                .filter(melon -> melon.getCategory().equals(type))
+                .collect(Collectors.toList());
+    }
 }
+
+
+// coleccion.filter(m => m.catergory === type)
